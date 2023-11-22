@@ -76,9 +76,9 @@ const App = () => {
         },
       ]
       const[all,setAll] = useState([]);
-      const[breakfast,setBreakfast] = useState([]);
-      const[lunch,setLunch] = useState([]);
-      const[shake,setShake] = useState([]);
+    //   const[breakfast,setBreakfast] = useState([]);
+    //   const[lunch,setLunch] = useState([]);
+    //   const[shake,setShake] = useState([]);
       const[type,setType] = useState("");
 //  useEffect(()=>{
 //     setAll(data);
@@ -86,17 +86,33 @@ const App = () => {
 //     // setLunch(data.filter((e)=>  e.category=="lunch"))
 //     // setShake(data.filter((e)=>  e.category=="shakes"))
 //  },[])
-    
+    function handleClick1(){
+        setAll(data);
+    }
+    function return2(){
+        let d2= data.filter((e)=> {return e.desc=="breakfast"});
+        return d2;
+    }
+    function handleClick2(){
+        let pass = return2();
+        setAll(pass);
+    }
+    function handleClick3(){
+        setAll(data.filter((e)=>e.desc=="lunch"));
+    }
+    function handleClick4(){
+        setAll(data.filter((e)=>e.desc=="shakes"));
+    }
   return (
     <div>
         <nav>
             <h1>Our Menu</h1>
         </nav>
         <div className='headings'>
-            <button onClick={()=> setType("all")} >All</button>
-            <label onClick={()=> setType("breakfast")}>Breakfast</label>
-            <label onClick={()=> setType("lunch")}>Lunch</label>
-            <label onClick={()=> setType("shake")}>Shakes</label>
+            <label onClick={handleClick1} >All</label>
+            <label onClick={handleClick2}>Breakfast</label>
+            <label onClick={handleClick3}>Lunch</label>
+            <label onClick={handleClick4}>Shakes</label>
         </div>
         <div>
        { 
