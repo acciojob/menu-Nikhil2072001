@@ -10,3 +10,10 @@ button{
     justify-content: center;
     align-items: center;
 }
+.headings{
+    width: 40%;
+    border: 2px solid red;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
